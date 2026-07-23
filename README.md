@@ -63,6 +63,27 @@ big_screen/
     └── job.json        # AI人才市场数据
 ```
 
+## 数据管道
+
+项目包含完整的数据处理管道，演示 ETL 流程：
+
+```bash
+# 从公开数据源重新生成 JSON 文件
+python data_pipeline.py
+
+# 同时更新 data.py 中的 SourceDataDemo
+python data_pipeline.py --all
+```
+
+管道结构：
+
+```
+data_pipeline.py
+  ├── Extract   → 从公开报告中提取原始数据点
+  ├── Transform → 转换为 ECharts 图表格式
+  └── Load      → 输出 static_data/*.json + 更新 data.py
+```
+
 ## 自定义数据
 
 编辑 `data.py` 中的 `SourceData` 类，替换 `echart*_data` 和 `map_1_data` 内的数据即可。格式参照已有的 `SourceDataDemo`。
