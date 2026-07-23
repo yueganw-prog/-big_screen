@@ -4,7 +4,7 @@
 
 from flask import Flask, render_template, jsonify
 from data import SourceData, CorpData, JobData
-from data_fake import get_accumulated_data
+from data_simulator import get_accumulated_data
 
 app = Flask(__name__)
 

@@ -21,6 +21,8 @@
 
 ## 快速开始
 
+> 注：项目数据为模拟演示数据，非真实业务数据，用作可视化效果展示。
+
 ```bash
 # 安装依赖
 pip install flask
@@ -43,7 +45,7 @@ python app.py
 big_screen/
 ├── app.py              # Flask 入口，路由定义
 ├── data.py             # 数据模型（SourceData / CorpData / JobData）
-├── data_fake.py        # 实时数据增长模拟
+├── data_simulator.py   # 实时数据增长模拟
 ├── templates/
 │   └── index.html      # 大屏 HTML 模板
 ├── static/
