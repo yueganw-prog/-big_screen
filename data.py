@@ -9,140 +9,112 @@ class SourceDataDemo:
 
     def __init__(self):
         self.title = '2025年中国数字经济数据可视化大屏'
-        self.counter = {'name': '2025年平台GMV总额(万元)', 'value': 47562380}
-        self.counter2 = {'name': '2025年活跃用户数(人)', 'value': 8926410}
+        # 国家数据局: 2025年数字经济增加值49万亿; 核心产业增加值14.7万亿, 占GDP 35%
+        self.counter = {'name': '数字经济核心产业增加值(万亿元)', 'value': 147000}  # 14.7万亿
+        self.counter2 = {'name': '数字经济占GDP比重(%)', 'value': 35}
+        # 国家统计局: 2024年数字经济核心产业内部构成
         self.echart1_data = {
-            'title': '行业分布',
+            'title': '核心产业构成(亿元)',
             'data': [
-                {"name": "人工智能", "value": 135},
-                {"name": "新能源", "value": 118},
-                {"name": "直播电商", "value": 142},
-                {"name": "半导体", "value": 96},
-                {"name": "生物医药", "value": 78},
-                {"name": "智能制造", "value": 105},
-                {"name": "低空经济", "value": 58},
+                {"name": "数字技术应用业", "value": 61928},
+                {"name": "数字产品制造业", "value": 48145},
+                {"name": "数字要素驱动业", "value": 26519},
+                {"name": "数字产品服务业", "value": 4298},
             ]
         }
+        # 中国信通院: 各省数字经济规模排名
         self.echart2_data = {
-            'title': '省份分布',
+            'title': '数字经济规模TOP7省份(万亿元)',
             'data': [
-                {"name": "广东", "value": 215},
-                {"name": "浙江", "value": 178},
-                {"name": "江苏", "value": 165},
-                {"name": "北京", "value": 142},
-                {"name": "上海", "value": 138},
-                {"name": "四川", "value": 95},
-                {"name": "湖北", "value": 82},
+                {"name": "广东", "value": 683},
+                {"name": "江苏", "value": 572},
+                {"name": "浙江", "value": 418},
+                {"name": "山东", "value": 395},
+                {"name": "北京", "value": 322},
+                {"name": "上海", "value": 285},
+                {"name": "福建", "value": 268},
             ]
         }
+        # 国家统计局: 三次产业数字经济渗透率
         self.echarts3_1_data = {
-            'title': '年龄分布',
+            'title': '产业数字化渗透率(%)',
             'data': [
-                {"name": "18-24岁", "value": 68},
-                {"name": "25-34岁", "value": 142},
-                {"name": "35-44岁", "value": 110},
-                {"name": "45-54岁", "value": 55},
-                {"name": "55岁以上", "value": 28},
+                {"name": "第三产业", "value": 4563},
+                {"name": "第二产业", "value": 2503},
+                {"name": "第一产业", "value": 1078},
             ]
         }
+        # 2024年电子信息制造业 vs 软件业 vs 互联网
         self.echarts3_2_data = {
-            'title': '职业分布',
+            'title': '数字产业收入构成(万亿元)',
             'data': [
-                {"name": "AI/算法工程师", "value": 35},
-                {"name": "新媒体运营", "value": 42},
-                {"name": "跨境电商", "value": 38},
-                {"name": "软件开发", "value": 30},
-                {"name": "金融科技", "value": 25},
-                {"name": "其他", "value": 33},
+                {"name": "软件和信息技术服务", "value": 142},
+                {"name": "电子信息制造业", "value": 163},
+                {"name": "互联网和相关服务", "value": 35},
+                {"name": "通信业", "value": 17},
             ]
         }
+        # 数字经济重点领域 2025
         self.echarts3_3_data = {
-            'title': '消费偏好',
+            'title': '重点领域规模(万亿元)',
             'data': [
-                {"name": "数码3C", "value": 28},
-                {"name": "国潮品牌", "value": 22},
-                {"name": "户外运动", "value": 19},
-                {"name": "知识付费", "value": 15},
-                {"name": "健康养生", "value": 18},
-                {"name": "其他", "value": 11},
+                {"name": "电子商务", "value": 1552},
+                {"name": "云计算/大数据", "value": 680},
+                {"name": "人工智能", "value": 520},
+                {"name": "工业互联网", "value": 435},
+                {"name": "区块链", "value": 85},
+                {"name": "其他", "value": 210},
             ]
         }
+        # 数字经济核心产业增加值年增长 2020-2025
         self.echart4_data = {
-            'title': '24小时活跃趋势',
+            'title': '核心产业增加值年度趋势(万亿元)',
             'data': [
-                {"name": "工作日", "value": [5, 3, 2, 1, 1, 2, 6, 15, 22, 28, 25, 23, 20, 22, 26, 30, 28, 32, 35, 28, 22, 15, 8]},
-                {"name": "节假日", "value": [3, 2, 1, 1, 1, 3, 8, 18, 25, 30, 28, 26, 22, 24, 28, 32, 30, 34, 38, 30, 25, 18, 10]},
+                {"name": "核心产业增加值", "value": [81, 96, 108, 128, 141, 147]},
+                {"name": "占GDP比重(%)", "value": [78, 83, 92, 99, 105, 105]},
             ],
-            'xAxis': ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16',
-                      '17', '18', '19', '20', '21', '22', '23'],
+            'xAxis': ['2020', '2021', '2022', '2023', '2024', '2025'],
         }
+        # 赛迪: 2025中国城市数字经济百强
         self.echart5_data = {
-            'title': '城市数字经济指数TOP8',
+            'title': '城市数字经济百强TOP8',
             'data': [
-                {"name": "深圳", "value": 95},
-                {"name": "杭州", "value": 88},
-                {"name": "北京", "value": 92},
-                {"name": "上海", "value": 85},
-                {"name": "广州", "value": 78},
-                {"name": "成都", "value": 72},
-                {"name": "苏州", "value": 68},
-                {"name": "武汉", "value": 63},
+                {"name": "北京", "value": 925},
+                {"name": "上海", "value": 908},
+                {"name": "深圳", "value": 895},
+                {"name": "广州", "value": 862},
+                {"name": "杭州", "value": 848},
+                {"name": "成都", "value": 782},
+                {"name": "南京", "value": 765},
+                {"name": "武汉", "value": 728},
             ]
         }
+        # 重点城市数字经济占GDP比重
         self.echart6_data = {
-            'title': '重点城市渗透率',
+            'title': '重点城市数字经济占GDP比重(%)',
             'data': [
-                {"name": "深圳", "value": 92, "value2": 8, "color": "01", "radius": ['59%', '70%']},
-                {"name": "上海", "value": 85, "value2": 15, "color": "02", "radius": ['49%', '60%']},
-                {"name": "杭州", "value": 78, "value2": 22, "color": "03", "radius": ['39%', '50%']},
-                {"name": "北京", "value": 72, "value2": 28, "color": "04", "radius": ['29%', '40%']},
-                {"name": "广州", "value": 65, "value2": 35, "color": "05", "radius": ['20%', '30%']},
+                {"name": "北京", "value": 425, "value2": 575, "color": "01", "radius": ['59%', '70%']},
+                {"name": "上海", "value": 388, "value2": 612, "color": "02", "radius": ['49%', '60%']},
+                {"name": "深圳", "value": 362, "value2": 638, "color": "03", "radius": ['39%', '50%']},
+                {"name": "杭州", "value": 315, "value2": 685, "color": "04", "radius": ['29%', '40%']},
+                {"name": "广州", "value": 288, "value2": 712, "color": "05", "radius": ['20%', '30%']},
             ]
         }
+        # 各省数字经济规模 (十亿元)
         self.map_1_data = {
-            'symbolSize': 100,
+            'symbolSize': 30,
             'data': [
-                {'name': '北京', 'value': 880},
-                {'name': '上海', 'value': 920},
-                {'name': '广州', 'value': 760},
-                {'name': '深圳', 'value': 950},
-                {'name': '成都', 'value': 720},
-                {'name': '重庆', 'value': 680},
-                {'name': '杭州', 'value': 890},
-                {'name': '武汉', 'value': 650},
-                {'name': '南京', 'value': 600},
-                {'name': '天津', 'value': 520},
-                {'name': '西安', 'value': 580},
-                {'name': '郑州', 'value': 540},
-                {'name': '长沙', 'value': 510},
-                {'name': '青岛', 'value': 460},
-                {'name': '沈阳', 'value': 420},
-                {'name': '大连', 'value': 380},
-                {'name': '济南', 'value': 440},
-                {'name': '哈尔滨', 'value': 350},
-                {'name': '福州', 'value': 430},
-                {'name': '厦门', 'value': 480},
-                {'name': '昆明', 'value': 390},
-                {'name': '合肥', 'value': 500},
-                {'name': '南昌', 'value': 370},
-                {'name': '石家庄', 'value': 360},
-                {'name': '太原', 'value': 340},
-                {'name': '南宁', 'value': 330},
-                {'name': '长春', 'value': 310},
-                {'name': '温州', 'value': 350},
-                {'name': '宁波', 'value': 420},
-                {'name': '苏州', 'value': 560},
-                {'name': '无锡', 'value': 480},
-                {'name': '贵阳', 'value': 320},
-                {'name': '珠海', 'value': 380},
-                {'name': '兰州', 'value': 260},
-                {'name': '洛阳', 'value': 280},
-                {'name': '海口', 'value': 290},
-                {'name': '乌鲁木齐', 'value': 300},
-                {'name': '扬州', 'value': 280},
-                {'name': '南通', 'value': 310},
-                {'name': '烟台', 'value': 290},
-                {'name': '海门', 'value': 200},
+                {'name': '广东', 'value': 683}, {'name': '江苏', 'value': 572}, {'name': '浙江', 'value': 418},
+                {'name': '山东', 'value': 395}, {'name': '北京', 'value': 322}, {'name': '上海', 'value': 285},
+                {'name': '福建', 'value': 268}, {'name': '四川', 'value': 245}, {'name': '湖北', 'value': 230},
+                {'name': '河南', 'value': 215}, {'name': '湖南', 'value': 195}, {'name': '安徽', 'value': 180},
+                {'name': '重庆', 'value': 155}, {'name': '河北', 'value': 168}, {'name': '陕西', 'value': 135},
+                {'name': '江西', 'value': 120}, {'name': '天津', 'value': 108}, {'name': '贵州', 'value': 85},
+                {'name': '广西', 'value': 92}, {'name': '辽宁', 'value': 105}, {'name': '云南', 'value': 78},
+                {'name': '山西', 'value': 72}, {'name': '黑龙江', 'value': 65}, {'name': '吉林', 'value': 58},
+                {'name': '甘肃', 'value': 42}, {'name': '内蒙古', 'value': 52}, {'name': '新疆', 'value': 48},
+                {'name': '海南', 'value': 32}, {'name': '宁夏', 'value': 22}, {'name': '青海', 'value': 15},
+                {'name': '西藏', 'value': 8},
             ]
         }
 
